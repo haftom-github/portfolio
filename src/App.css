@@ -81,6 +81,65 @@ button:focus-visible {
   color: var(--color-background);
 }
 
+.projects {
+  padding: 4rem;
+}
+
+.projects .header{
+  font-size: larger;
+  font-weight: bold;
+  padding: 2rem 0;
+}
+
+.projects .pic {
+  flex-shrink: 0;
+  /* height: 100%; */
+  width: 100px;
+}
+
+.projects img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.projects .main {
+  display: flex;
+}
+
+.project {
+  padding: 2rem 0;
+}
+
+.project .detail {
+  padding: 0 2rem;
+}
+
+.project .description {
+  padding: .5rem 0;
+}
+
+.technologies{
+  padding: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  line-height: 1;
+  border-radius: 20px;
+  background-color: color-mix(in srgb, var(--color-secondary), transparent 90%);
+  padding: 0.5rem 0.7rem;
+  margin: 0.2rem;
+  color: var(--color-secondary);
+}
+
+@media (max-width: 700px) {
+  #root, .projects, .hero-section {
+    padding: 1rem;
+  }
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

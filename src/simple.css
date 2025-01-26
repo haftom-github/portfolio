@@ -1,30 +1,30 @@
 :root {
-    --color-primary: #226969;
-    --color-shade-primary: #115353;
-    --color-shade-plus-primary: #073D3D;
-    --color-tint-primary: #357D7D;
-    --color-tint-plus-primary: #4C9292;
-    --color-secondary: #AF6E39;
-    --color-shade-secondary: #8A4E1D;
-    --color-shade-plus-secondary: #66350C;
-    --color-tint-secondary: #D18E58;
-    --color-tint-plus-secondary: #F3B47F;
-    --color-light: #ffffff;
-    --color-dark: #000000;
+    --color-primary: rgb(34, 105, 105);
+    --color-shade-primary: rgb(17, 83, 83);
+    --color-shade-plus-primary: rgb(7, 61, 61);
+    --color-tint-primary: rgb(53, 125, 125);
+    --color-tint-plus-primary: rgb(76, 146, 146);
+    --color-secondary: rgb(175, 110, 57);
+    --color-shade-secondary: rgb(138, 78, 29);
+    --color-shade-plus-secondary: rgb(102, 53, 12);
+    --color-tint-secondary: rgb(209, 142, 88);
+    --color-tint-plus-secondary: rgb(243, 180, 127);
+    --color-light: rgb(255, 255, 255);
+    --color-dark: rgb(0, 0, 0);
     color-scheme: light dark;
 }
 
 [data-theme='dark'] {
-    --color-background: #242424;
+    --color-background: rgb(36, 36, 36);
     --color-text: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    background-color: rgb(36, 36, 36);
     color: rgba(255, 255, 255, 0.87);
 }
 
 [data-theme='light'] {
-    --color-background: #fafafa;
-    --color-text: #213547;
-    background-color: #fafafa;
-    color: #213547;
+    --color-background: rgb(250, 250, 250);
+    --color-text: rgb(33, 53, 71);
+    background-color: rgb(250, 250, 250);
+    color: rgb(33, 53, 71);
 }
 
