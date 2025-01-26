@@ -1,8 +1,184 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100vw;
   padding: 2rem;
-  text-align: center;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.5rem 1.2rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.hero-section {
+  max-width: 900px;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-entry {
+  padding: 1rem 0;
+  color: var(--color-tint-plus-primary)
+}
+
+.hero-text {
+  font-size: 40px;
+  font-weight: bold;
+  padding: 1rem 0;
+}
+
+.hero-text-secondary {
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.hero-centroid {
+  color: var(--color-secondary);
+}
+
+.hero-body {
+  opacity: 0.7;
+}
+
+.hero-action {
+  padding: 2rem 0;
+}
+
+.hero-action-primary {
+  background-color: transparent;
+  border-radius: 5px;
+  border-color: var(--color-secondary);
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
+.hero-action-primary:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-background);
+}
+
+.hero-action-secondary {
+  background-color: transparent;
+  border-radius: 5px;
+  border-color: var(--color-primary);
+  font-weight: bold;
+  opacity: 0.7;
+  margin: 0 2rem;
+  color: var(--color-primary)
+}
+
+.hero-action-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.projects {
+  padding: 4rem;
+}
+
+.projects .header{
+  font-size: larger;
+  font-weight: bold;
+  padding: 2rem 0;
+}
+
+.projects .pic {
+  flex-shrink: 0;
+  padding: 1rem;
+  width: 150px;
+  height: 150px;
+}
+
+.projects img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.projects .main {
+  display: flex;
+}
+
+.project {
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem 0;
+  max-width: 700px;
+}
+
+.project:hover {
+  box-shadow: 0 0 5px color-mix(in srgb, var(--color-text), transparent 80%) inset;
+}
+
+.project:hover .title {
+  color: var(--color-tint-plus-secondary);
+}
+
+.project:hover .description {
+  opacity: 1;
+}
+
+.project .detail {
+  padding: 0 2rem;
+}
+
+.project .description {
+  padding: .5rem 0;
+}
+
+.technologies{
+  padding: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project .title {
+  font-size: large;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
+.project .description {
+  opacity: 0.7;
+}
+
+.tag {
+  line-height: 1;
+  border-radius: 20px;
+  background-color: color-mix(in srgb, var(--color-secondary), transparent 90%);
+  padding: 0.5rem 0.7rem;
+  margin: 0.2rem;
+  color: var(--color-tint-plus-secondary);
+}
+
+@media (max-width: 800px) {
+  #root, .projects, .hero-section {
+    padding: 1rem;
+  }
+
+  .project .pic {
+    width: 110px;
+    height: 110px;
+  }
+
+  .project .detail {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .projects {
+    padding: 0;
+  }
 }
 
 .logo {
@@ -31,12 +207,4 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
