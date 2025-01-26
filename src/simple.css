@@ -22,6 +22,16 @@
 }
 
 [data-theme='light'] {
+    --color-secondary: rgb(34, 105, 105);
+    --color-shade-secondary: rgb(17, 83, 83);
+    --color-shade-plus-secondary: rgb(7, 61, 61);
+    --color-tint-secondary: rgb(53, 125, 125);
+    --color-tint-plus-secondary: rgb(76, 146, 146);
+    --color-primary: rgb(175, 110, 57);
+    --color-shade-primary: rgb(138, 78, 29);
+    --color-shade-plus-primary: rgb(102, 53, 12);
+    --color-tint-primary: rgb(209, 142, 88);
+    --color-tint-plus-primary: rgb(243, 180, 127);
     --color-background: rgb(250, 250, 250);
     --color-text: rgb(33, 53, 71);
     background-color: rgb(250, 250, 250);

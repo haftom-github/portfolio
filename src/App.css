@@ -93,8 +93,9 @@ button:focus-visible {
 
 .projects .pic {
   flex-shrink: 0;
-  /* height: 100%; */
-  width: 100px;
+  padding: 1rem;
+  width: 150px;
+  height: 150px;
 }
 
 .projects img {
@@ -108,7 +109,22 @@ button:focus-visible {
 }
 
 .project {
-  padding: 2rem 0;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem 0;
+  max-width: 700px;
+}
+
+.project:hover {
+  box-shadow: 0 0 5px color-mix(in srgb, var(--color-text), transparent 80%) inset;
+}
+
+.project:hover .title {
+  color: var(--color-tint-plus-secondary);
+}
+
+.project:hover .description {
+  opacity: 1;
 }
 
 .project .detail {
@@ -125,18 +141,43 @@ button:focus-visible {
   flex-wrap: wrap;
 }
 
+.project .title {
+  font-size: large;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
+.project .description {
+  opacity: 0.7;
+}
+
 .tag {
   line-height: 1;
   border-radius: 20px;
   background-color: color-mix(in srgb, var(--color-secondary), transparent 90%);
   padding: 0.5rem 0.7rem;
   margin: 0.2rem;
-  color: var(--color-secondary);
+  color: var(--color-tint-plus-secondary);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   #root, .projects, .hero-section {
     padding: 1rem;
+  }
+
+  .project .pic {
+    width: 110px;
+    height: 110px;
+  }
+
+  .project .detail {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .projects {
+    padding: 0;
   }
 }
 
