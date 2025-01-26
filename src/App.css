@@ -36,6 +36,11 @@ button:focus-visible {
   padding: 1rem 0;
 }
 
+.hero-text-primary {
+  line-height: 1;
+  padding: .5rem 0;
+}
+
 .hero-text-secondary {
   line-height: 1;
   opacity: 0.7;
@@ -43,6 +48,10 @@ button:focus-visible {
 
 .hero-centroid {
   color: var(--color-secondary);
+}
+
+.hero-text-secondary .hero-centroid {
+  color: var(--color-tint-plus-primary)
 }
 
 .hero-body {
@@ -93,15 +102,29 @@ button:focus-visible {
 
 .projects .pic {
   flex-shrink: 0;
-  padding: 1rem;
+  padding: .5rem;
+  position: relative;
   width: 150px;
-  height: 150px;
+  height: 100px;
+  background-blend-mode: overlay;
 }
 
-.projects img {
+.project img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.project .pic::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: color-mix(in srgb, var(--color-background), transparent 90%);
+  mix-blend-mode: multiply;
+  z-index: 1;
 }
 
 .projects .main {
@@ -109,18 +132,31 @@ button:focus-visible {
 }
 
 .project {
+  position: relative;
   border-radius: 5px;
   padding: 1rem;
   margin: 1rem 0;
   max-width: 700px;
 }
 
+.project:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: color-mix(in srgb, var(--color-text), transparent 97%);
+    /* mix-blend-mode: multiply; */
+    z-index: 1;
+}
+
 .project:hover {
-  box-shadow: 0 0 5px color-mix(in srgb, var(--color-text), transparent 80%) inset;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--color-text), transparent 90%) inset;
 }
 
 .project:hover .title {
-  color: var(--color-tint-plus-secondary);
+  color: var(--color-tint-plus-primary);
 }
 
 .project:hover .description {
@@ -144,7 +180,7 @@ button:focus-visible {
 .project .title {
   font-size: large;
   font-weight: bold;
-  color: var(--color-secondary);
+  color: var(--color-text);
 }
 
 .project .description {
@@ -167,7 +203,7 @@ button:focus-visible {
 
   .project .pic {
     width: 110px;
-    height: 110px;
+    height: 70px;
   }
 
   .project .detail {
@@ -178,6 +214,9 @@ button:focus-visible {
 @media (max-width: 500px) {
   .projects {
     padding: 0;
+  }
+  .projects .detail {
+    padding-right: 0;
   }
 }
 
