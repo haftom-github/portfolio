@@ -38,3 +38,7 @@
     color: rgb(33, 53, 71);
 }
 
+.hide {
+    display: none !important;
+}
+

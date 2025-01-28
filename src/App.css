@@ -19,7 +19,8 @@ button:focus-visible {
 
 .hero-section {
   max-width: 900px;
-  padding: 4rem;
+  padding: 2rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,7 +32,7 @@ button:focus-visible {
 }
 
 .hero-text {
-  font-size: 40px;
+  font-size: 80px;
   font-weight: bold;
   padding: 1rem 0;
 }
@@ -43,23 +44,20 @@ button:focus-visible {
 
 .hero-text-secondary {
   line-height: 1;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .hero-centroid {
   color: var(--color-secondary);
 }
 
-.hero-text-secondary .hero-centroid {
+/* .hero-text-secondary .hero-centroid {
   color: var(--color-tint-plus-primary)
-}
+} */
 
 .hero-body {
   opacity: 0.7;
-}
-
-.hero-action {
-  padding: 2rem 0;
+  max-width: 600px;
 }
 
 .hero-action-primary {
@@ -68,6 +66,10 @@ button:focus-visible {
   border-color: var(--color-secondary);
   font-weight: bold;
   color: var(--color-secondary);
+}
+
+.hero-action {
+  margin-top: .5rem;
 }
 
 .hero-action-primary:hover {
@@ -90,14 +92,50 @@ button:focus-visible {
   color: var(--color-background);
 }
 
+.hero-contacts {
+  width: fit-content;
+  padding: 1rem 0;
+}
+
+.hero-contacts .icons {
+  display: flex;
+}
+
+
+.hero-contacts .url {
+  display: flex;
+}
+
+.contact-copy {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hero-contacts .contact{
+  cursor: pointer;
+  padding-right: .5rem;
+  padding-top: .5rem;
+  margin-right: .5rem;
+  margin-top: .5rem;
+}
+
+.contact-value {
+  padding: .5rem;
+  padding-left: 0;
+  opacity: .7;
+}
+
 .projects {
-  padding: 4rem;
+  padding: 3rem 1rem;
+  margin-top: 3rem;
 }
 
 .projects .header{
   font-size: larger;
   font-weight: bold;
-  padding: 2rem 0;
+  padding: 1rem 1rem;
+
 }
 
 .projects .pic {
@@ -147,7 +185,6 @@ button:focus-visible {
     width: 100%;
     height: 100%;
     background: color-mix(in srgb, var(--color-text), transparent 97%);
-    /* mix-blend-mode: multiply; */
     z-index: 1;
 }
 
@@ -212,11 +249,23 @@ button:focus-visible {
 }
 
 @media (max-width: 500px) {
-  .projects {
+  .hero-text {
+    font-size: 60px;
+  }
+  .projects, .hero-section {
     padding: 0;
+  }
+  .project {
+    padding-left: 0rem;
+    /* padding-right: 1rem; */
   }
   .projects .detail {
     padding-right: 0;
+  }
+  .project .pic {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: .5rem;
   }
 }
 
