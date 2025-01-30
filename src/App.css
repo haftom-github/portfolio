@@ -101,7 +101,6 @@ button:focus-visible {
   display: flex;
 }
 
-
 .hero-contacts .url {
   display: flex;
 }
@@ -110,6 +109,10 @@ button:focus-visible {
   display: flex;
   align-items: center;
   cursor: pointer;
+  opacity: 0.7;
+}
+.contact-copy:hover {
+  opacity: 1;
 }
 
 .hero-contacts .contact{
@@ -118,6 +121,13 @@ button:focus-visible {
   padding-top: .5rem;
   margin-right: .5rem;
   margin-top: .5rem;
+}
+
+.contact svg{
+  opacity: .7;
+}
+.contact:hover svg{
+  opacity: 1;
 }
 
 .contact-value {
@@ -257,7 +267,6 @@ button:focus-visible {
   }
   .project {
     padding-left: 0rem;
-    /* padding-right: 1rem; */
   }
   .projects .detail {
     padding-right: 0;
