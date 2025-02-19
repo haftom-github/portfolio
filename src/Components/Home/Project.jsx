@@ -27,7 +27,7 @@ function Main({ project }){
                 <div className="description">{project.description}</div>
                 <div className="technologies">
                     {
-                        project.technologies.map((tech, indx)=><Tag key={indx} text={tech}/>)
+                        project.techStack.map((tech, indx)=><Tag key={indx} text={tech}/>)
                     }
                 </div>
             </div>
@@ -35,9 +35,9 @@ function Main({ project }){
     )
 }
 
-function Project({ project }){
+function Project({ setActiveProject, index, project }){
     return (
-        <div className="project">
+        <div className="project" onClick={()=>setActiveProject(index)}>
             <Main project={project} />
         </div>
     )

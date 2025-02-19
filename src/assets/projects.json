@@ -3,48 +3,96 @@
         "title": "project-1",
         "company": "XYZ",
         "date": "feb-2024",
-        "technologies": ["tool1", "tool2", "tool3"],
+        "techStack": ["tool1", "tool2", "tool3"],
         "status": "completed",
         "description": "lorem ipsum delur amit djfla bekat kslim, feliz jugo, narnaga te muy delicioso",
-        "features": [],
-        "repository": "",
-        "url": "",
-        "images": "/assets/images/projects/project-1",
-        "image": "/src/assets/project1.png"
+        "links": [
+            {
+                "name": "github-repo",
+                "url": ""
+            },
+            {
+                "name": "web",
+                "url": ""
+            }
+        ],
+        "images": [
+          {
+            "url": "/src/assets/project1.png",
+            "caption": "caption - 1"
+          },
+          {
+            "url": "/src/assets/project1-2.png",
+            "caption": "caption - 2"
+          },
+          {
+            "url": "/src/assets/project1-3.png",
+            "caption": "caption - 3"
+          }
+        ]
     },
     {
         "title": "IntelliScore",
         "company": "own project",
         "date": "feb-2023",
-        "technologies": ["Java", "Spring Boot", "Android", "TensorFlow", "Apache Commons Math"],
+        "techStack": ["Java", "Spring Boot", "Android", "TensorFlow", "Apache Commons Math"],
         "status": "In Progress",
         "description": "An intelligent grading and analytics system for multiple-choice tests. Includes machine learning-based image processing and grade storage with analytics capabilities.",
-        "features": [
-          "Real-time image processing",
-          "Adaptive thresholding for shade detection",
-          "Grade analytics and reporting",
-          "Scalable design for multi-country deployment"
+        "links": [
+            {
+                "name": "github-repo",
+                "url": ""
+            },
+            {
+                "name": "web",
+                "url": ""
+            }
         ],
-        "repository": "https://github.com/username/intelliscore",
-        "url": "",
-        "images": "/assets/images/intelliscore.png",
-        "image": "/src/assets/project1.png"
+        "images": [
+          {
+            "url": "/src/assets/project1.png",
+            "caption": "caption - 1"
+          },
+          {
+            "url": "/src/assets/project1-2.png",
+            "caption": "caption - 2"
+          },
+          {
+            "url": "/src/assets/project1-3.png",
+            "caption": "caption - 3"
+          }
+        ]
       },
       {
         "title": "MIT Authentication System",
         "company": "Mekelle University - MIT",
         "date": "",
-        "technologies": ["Java", "MySQL", "Swing"],
+        "techStack": ["Java", "MySQL", "Swing"],
         "status": "completed",
         "description": "An office automation project to manage cafeteria gate authentication and library access for campus facilities.",
-        "features": [
-          "Automated gate authentication",
-          "Library management system integration",
-          "User-friendly desktop interface"
+        "links": [
+            {
+                "name": "github-repo",
+                "url": ""
+            },
+            {
+                "name": "web",
+                "url": ""
+            }
         ],
-        "repository": "",
-        "url": "",
-        "images": "/assets/images/mit_authentication.png",
-        "image": "/src/assets/project1.png"
+        "images": [
+          {
+            "url": "/src/assets/project1.png",
+            "caption": "caption - 1"
+          },
+          {
+            "url": "/src/assets/project1-2.png",
+            "caption": "caption - 2"
+          },
+          {
+            "url": "/src/assets/project1-3.png",
+            "caption": "caption - 3"
+          }
+        ]
       }
 ]

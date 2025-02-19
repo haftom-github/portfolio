@@ -157,7 +157,7 @@ button:focus-visible {
   background-blend-mode: overlay;
 }
 
-.project img {
+.list img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -175,7 +175,7 @@ button:focus-visible {
   z-index: 1;
 }
 
-.projects .main {
+.list .main {
   display: flex;
 }
 
@@ -268,13 +268,30 @@ button:focus-visible {
   .project {
     padding-left: 0rem;
   }
-  .projects .detail {
+  .list .detail {
     padding-right: 0;
   }
-  .project .pic {
+  .list .pic {
     padding-left: 0;
     padding-right: 0;
     margin-top: .5rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .list-detail {
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-between;
+  }
+  .list {
+    max-width: 500px;
+    max-height: 500px;
+    overflow: scroll;
+  }
+  .detail {
+    max-height: 500px;
+    overflow: scroll;
   }
 }
 
