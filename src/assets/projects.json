@@ -35,7 +35,7 @@
         "title": "IntelliScore",
         "company": "own project",
         "date": "feb-2023",
-        "techStack": ["Java", "Spring Boot", "Android", "TensorFlow", "Apache Commons Math"],
+        "techStack": ["Java", "Spring Boot", "Android", "TensorFlow"],
         "status": "In Progress",
         "description": "An intelligent grading and analytics system for multiple-choice tests. Includes machine learning-based image processing and grade storage with analytics capabilities.",
         "links": [

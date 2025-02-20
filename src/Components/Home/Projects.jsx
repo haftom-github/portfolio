@@ -42,6 +42,8 @@ const detailStyle = css`
     flex-grow: 1;
     width: 800px;
     margin: auto 0;
+    transform: translate(30px, -30px);
+    box-shadow: -5px 5px 3px color-mix(in srgb, var(--color-text), transparent 70%);
     background-color: color-mix(in srgb, var(--color-tint-primary), transparent 80%);
     .title, .description, .features {
         width: 100%;
@@ -58,14 +60,18 @@ const detailStyle = css`
         font-size: large;
         font-weight: bold;
         text-align: center;
+        text-transform: uppercase;
     }
     .description {
-        padding: 1rem 0;
-        padding-top: 0;
+        width: 70%;
         text-align: center;
+        padding: 1rem 0;
     }
     .tech-stack {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 70%;
     }
 `
 
