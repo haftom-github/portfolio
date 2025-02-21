@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import Project from "./Project"
 import { css } from "@emotion/react"
 import Github from "../../assets/github.svg?react"
@@ -40,11 +40,18 @@ const detailStyle = css`
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
-    width: 800px;
+    width: 80%;
     margin: auto 0;
-    transform: translate(30px, -30px);
-    box-shadow: -5px 5px 3px color-mix(in srgb, var(--color-text), transparent 70%);
-    background-color: color-mix(in srgb, var(--color-tint-primary), transparent 80%);
+    transform: translate(25px, -25px);
+    background-color: color-mix(in srgb, var(--color-tint-primary) 20%, var(--color-background));
+    z-index: 100;
+    opacity: 0;
+    transition: box-shadow .2s ease-in-out, transform .2s ease-in-out, opacity .6s ease-in-out;
+    &.shadow {
+        box-shadow: -5px 5px 3px color-mix(in srgb, var(--color-text), transparent 70%);
+        transform: translate(30px, -30px);
+        opacity: 1;
+    }
     .title, .description, .features {
         width: 100%;
     }
@@ -77,7 +84,7 @@ const detailStyle = css`
 
 function Detail({ project }){
     return (
-        <div className="detail" css={detailStyle}>
+        <div css={detailStyle} className="mid-detail shadow hide">
             <div className="title">
                 { project.title }
             </div>
@@ -99,17 +106,30 @@ function Detail({ project }){
     )
 }
 
+const listDetailStyle = css`
+    @media (max-width: 1099px){
+        ::after, ::before{
+            border: 0;
+        }
+    }
+`
+
 function Projects({ projects }){
     const [activeProjectIndex, setActiveProjectIndex] = useState(0);
     function handleProjectClick(index){
-        setActiveProjectIndex(index)
+        const detail = document.querySelector('.mid-detail')
+        detail.classList.remove('shadow')
+        setTimeout(()=>{
+            setActiveProjectIndex(index)
+            detail.classList.add('shadow')
+        }, 300)
     }
     return (
         <div className="projects">
             <div className="header">
                 Projects
             </div>
-            <div className="list-detail">
+            <div css={listDetailStyle} className="list-detail border-corner">
                 <div className="list">
                     {
                         projects.map((project, indx)=> <Project setActiveProject={handleProjectClick} index={indx} key={indx} project={project} />)

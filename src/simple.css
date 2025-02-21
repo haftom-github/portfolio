@@ -4,6 +4,11 @@
     --color-shade-plus-primary: rgb(7, 61, 61);
     --color-tint-primary: rgb(53, 125, 125);
     --color-tint-plus-primary: rgb(76, 146, 146);
+    /* --color-secondary: rgb(34, 105, 105);
+    --color-shade-secondary: rgb(17, 83, 83);
+    --color-shade-plus-secondary: rgb(7, 61, 61);
+    --color-tint-secondary: rgb(53, 125, 125);
+    --color-tint-plus-secondary: rgb(76, 146, 146); */
     --color-secondary: rgb(175, 110, 57);
     --color-shade-secondary: rgb(138, 78, 29);
     --color-shade-plus-secondary: rgb(102, 53, 12);
@@ -22,7 +27,7 @@
 }
 
 [data-theme='light'] {
-    --color-secondary: rgb(34, 105, 105);
+    /* --color-secondary: rgb(34, 105, 105);
     --color-shade-secondary: rgb(17, 83, 83);
     --color-shade-plus-secondary: rgb(7, 61, 61);
     --color-tint-secondary: rgb(53, 125, 125);
@@ -31,7 +36,7 @@
     --color-shade-primary: rgb(138, 78, 29);
     --color-shade-plus-primary: rgb(102, 53, 12);
     --color-tint-primary: rgb(209, 142, 88);
-    --color-tint-plus-primary: rgb(243, 180, 127);
+    --color-tint-plus-primary: rgb(243, 180, 127); */
     --color-background: rgb(250, 250, 250);
     --color-text: rgb(33, 53, 71);
     background-color: rgb(250, 250, 250);
@@ -48,3 +53,29 @@
     text-overflow: ellipsis;
 }
 
+.border-corner {
+    position: relative;
+}
+
+.border-corner::before,
+.border-corner::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 75px;
+    border: 2px solid var(--color-text);
+}
+
+.border-corner::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.border-corner::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}

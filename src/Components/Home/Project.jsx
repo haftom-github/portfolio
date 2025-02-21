@@ -7,13 +7,14 @@ function Main({ project }){
     const handleResize = () => setScreenWidth(window.innerWidth)
     useEffect(()=>{
         window.addEventListener('resize', handleResize)
-    }, window.removeEventListener('resize', handleResize))
+        return  () => window.removeEventListener('resize', handleResize)
+    })
     return (
         <div className="main">
             {screenWidth > 500
             &&
             <div className="pic">
-                <img src={project.image} alt={project.title} />
+                <img src={project.images[0].url} alt={project.title} />
             </div>
             }
             <div className="detail">
@@ -21,10 +22,10 @@ function Main({ project }){
                 {window.screen.width <= 500
                 &&
                 <div className="pic">
-                    <img src={project.image} alt={project.title} />
+                    <img src={project.images[0].url} alt={project.title} />
                 </div>
                 }
-                <div className="description">{project.description}</div>
+                <div className="description">{project.shorterDescription}</div>
                 <div className="technologies">
                     {
                         project.techStack.map((tech, indx)=><Tag key={indx} text={tech}/>)

@@ -5,6 +5,7 @@
         "date": "feb-2024",
         "techStack": ["tool1", "tool2", "tool3"],
         "status": "completed",
+        "shorterDescription": "lorem ipsum delur amit djfla bekat kslim, feliz jugo, narnaga te muy delicioso",
         "description": "lorem ipsum delur amit djfla bekat kslim, feliz jugo, narnaga te muy delicioso",
         "links": [
             {
@@ -37,6 +38,7 @@
         "date": "feb-2023",
         "techStack": ["Java", "Spring Boot", "Android", "TensorFlow"],
         "status": "In Progress",
+        "shorterDescription": "lorem ipsum delur amit djfla bekat kslim, feliz jugo, narnaga te muy delicioso",
         "description": "An intelligent grading and analytics system for multiple-choice tests. Includes machine learning-based image processing and grade storage with analytics capabilities.",
         "links": [
             {
@@ -69,6 +71,7 @@
         "date": "",
         "techStack": ["Java", "MySQL", "Swing"],
         "status": "completed",
+        "shorterDescription": "lorem ipsum delur amit djfla bekat kslim, feliz jugo, narnaga te muy delicioso",
         "description": "An office automation project to manage cafeteria gate authentication and library access for campus facilities.",
         "links": [
             {

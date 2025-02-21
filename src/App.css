@@ -185,6 +185,7 @@ button:focus-visible {
   padding: 1rem;
   margin: 1rem 0;
   max-width: 700px;
+  transition: all .3s ease-in-out;
 }
 
 .project:hover::after {
@@ -219,7 +220,7 @@ button:focus-visible {
 }
 
 .technologies{
-  padding: 1rem 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
 }
@@ -280,18 +281,28 @@ button:focus-visible {
 
 @media (min-width: 1100px) {
   .list-detail {
-    border: 2px solid red;
     display: flex;
     justify-content: space-between;
   }
   .list {
-    max-width: 500px;
+    max-width: 450px;
     max-height: 500px;
     overflow: scroll;
+    margin: 1rem;
   }
-  .detail {
+  .list-detail .mid-detail {
     max-height: 500px;
     overflow: scroll;
+    display: flex !important;
+  }
+  .project .pic, .project .technologies {
+    display: none;
+  }
+  .project .detail {
+    padding: .5rem;
+  }
+  .projects {
+    padding-right: 3rem;
   }
 }
 

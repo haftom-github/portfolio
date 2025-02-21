@@ -16,13 +16,15 @@ const Carousel = ({ images }) => {
             setCaptionState(1)
         }
         else setCaptionState(0)
-        return ()=>{console.log(captionState)}
+        removeSlideAnimation();
     }, [images, currentIndex])
+
     const handleSeeMore = () => {
         if (captionState === 1) setCaptionState(2)
         else setCaptionState(1)
     }
-    const handleImageLoaded = () => {
+
+    const removeSlideAnimation = () => {
         imageRef.current.classList.remove('slide-in');
     }
 
@@ -50,7 +52,7 @@ const Carousel = ({ images }) => {
         <div className="carousel">
             <button onClick={prevSlide} className="carousel-button prev"><ArrowLeft /></button>
             <div className='slide'>
-                <img onLoad={handleImageLoaded} ref={imageRef} src={images[currentIndex].url} alt="carousel" className="carousel-image slide-in" />
+                <img ref={imageRef} src={images[currentIndex].url} alt="carousel" className="carousel-image slide-in" />
                 <div className='caption'>
                     <div ref={textRef} className={captionState !== 2 ? 'text-elipsis': ''}>{images[currentIndex].caption}</div>
                     <button onClick={handleSeeMore} ref={seeMoreButtonRef} className={captionState === 0 ? 'hide': ''}>{captionState==1?"more":"less"}</button>
