@@ -117,7 +117,12 @@ const listDetailStyle = css`
 function Projects({ projects }){
     const [activeProjectIndex, setActiveProjectIndex] = useState(0);
     function handleProjectClick(index){
+        if (activeProjectIndex === index){
+            return
+        }
         const detail = document.querySelector('.mid-detail')
+        const carouselImage = document.querySelector('.carousel-image')
+        carouselImage.classList.add('slide-in')
         detail.classList.remove('shadow')
         setTimeout(()=>{
             setActiveProjectIndex(index)
