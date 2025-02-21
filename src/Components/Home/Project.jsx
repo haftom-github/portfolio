@@ -36,9 +36,9 @@ function Main({ project }){
     )
 }
 
-function Project({ setActiveProject, index, project }){
+function Project({ activeProject, setActiveProject, index, project }){
     return (
-        <div className="project" onClick={()=>setActiveProject(index)}>
+        <div className={activeProject === index ? "project active": "project"} onClick={()=>setActiveProject(index)}>
             <Main project={project} />
         </div>
     )

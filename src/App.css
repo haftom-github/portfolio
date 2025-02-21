@@ -1,6 +1,10 @@
 #root {
   width: 100vw;
   padding: 2rem;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
 button {
@@ -188,7 +192,7 @@ button:focus-visible {
   transition: all .3s ease-in-out;
 }
 
-.project:hover::after {
+.project:hover::after, .project.active::after {
     content: '';
     position: absolute;
     top: 0;
@@ -199,15 +203,15 @@ button:focus-visible {
     z-index: 1;
 }
 
-.project:hover {
+.project:hover, .project.active {
   box-shadow: 0 0 8px color-mix(in srgb, var(--color-text), transparent 90%) inset;
 }
 
-.project:hover .title {
+.project:hover .title, .project.active .title {
   color: var(--color-tint-plus-primary);
 }
 
-.project:hover .description {
+.project:hover .description, .project.active .description {
   opacity: 1;
 }
 

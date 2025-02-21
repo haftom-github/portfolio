@@ -59,7 +59,7 @@ function Contacts (){
 
 function Hero(){
     return (
-        <div className="hero-section">
+        <div className="hero-section ss-section">
             {/* <div className="hero-entry">welcome, welcome!!!</div> */}
             <div className="hero-text">
                 <div className="hero-text-primary">Full-stack <span className="hero-centroid">Web</span> </div>

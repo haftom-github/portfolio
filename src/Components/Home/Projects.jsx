@@ -130,14 +130,14 @@ function Projects({ projects }){
         }, 300)
     }
     return (
-        <div className="projects">
+        <div className="projects ss-section">
             <div className="header">
                 Projects
             </div>
             <div css={listDetailStyle} className="list-detail border-corner">
                 <div className="list">
                     {
-                        projects.map((project, indx)=> <Project setActiveProject={handleProjectClick} index={indx} key={indx} project={project} />)
+                        projects.map((project, indx)=> <Project activeProject={activeProjectIndex} setActiveProject={handleProjectClick} index={indx} key={indx} project={project} />)
                     }
                 </div>
                 <Detail project={projects[activeProjectIndex]} />

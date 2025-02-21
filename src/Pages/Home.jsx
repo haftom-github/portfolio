@@ -5,8 +5,10 @@ import projects from "../assets/projects.json"
 function Home(){
     return (
         <>
-        <Hero />
-        <Projects projects={projects} />
+        <div className="ss-container">
+            <Hero />
+            <Projects projects={projects} />
+        </div>
         </>
     )
 }

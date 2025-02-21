@@ -14,7 +14,7 @@
 }
 
 .carousel-image {
-    background-color: color-mix(in srgb, var(--color-tint-primary), transparent 80%);
+    background-color: color-mix(in srgb, var(--color-tint-primary), transparent 95%);
     box-sizing: border-box;
     padding: .5rem;
     padding-bottom: 0;
@@ -98,7 +98,7 @@
     padding: 2px;
     margin: 0 5px;
     cursor: pointer;
-    transition: transform, background-color .6s ease-in-out;
+    transition: transform .3s ease-in-out, background-color .3s ease-in-out;
 }
 
 .carousel-dot.active {
