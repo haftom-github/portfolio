@@ -11,6 +11,10 @@ const Carousel = ({ images }) => {
     const textRef = useRef(null);
     const seeMoreButtonRef = useRef(null);
 
+    useEffect(()=>{
+        setCurrentIndex(0);
+    }, [images])
+
     useEffect(() => {
         if (textRef.current.scrollWidth > textRef.current.clientWidth){
             setCaptionState(1)

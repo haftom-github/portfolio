@@ -1,14 +1,8 @@
-import { useState } from "react";
 import Tag from "./Tag";
-import { useEffect } from "react";
+import useScreenSize from "../../Hooks/useScreenSize";
 
 function Main({ project }){
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-    const handleResize = () => setScreenWidth(window.innerWidth)
-    useEffect(()=>{
-        window.addEventListener('resize', handleResize)
-        return  () => window.removeEventListener('resize', handleResize)
-    })
+    const screenWidth = useScreenSize();
     return (
         <div className="main">
             {screenWidth > 500
@@ -37,8 +31,9 @@ function Main({ project }){
 }
 
 function Project({ activeProject, setActiveProject, index, project }){
+    const screenWidth = useScreenSize()
     return (
-        <div className={activeProject === index ? "project active": "project"} onClick={()=>setActiveProject(index)}>
+        <div className={screenWidth >= 1100 && activeProject === index ? "project active": "project"} onClick={()=>setActiveProject(index)}>
             <Main project={project} />
         </div>
     )
