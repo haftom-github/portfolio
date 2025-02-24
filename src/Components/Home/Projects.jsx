@@ -6,6 +6,7 @@ import Github from "../../assets/github.svg?react"
 import Web from "../../assets/web.svg?react"
 import Tag from "./Tag"
 import Carousel from "../Carousel"
+import useScreenSize from "../../Hooks/useScreenSize"
 
 function Icon({ name }){
     switch(name){
@@ -52,6 +53,10 @@ const detailStyle = css`
         transform: translate(30px, -30px);
         opacity: 1;
     }
+    &.not-visited {
+        transform: translate(0, 0);
+        box-shadow: none;
+    }
     .title, .description, .features {
         width: 100%;
     }
@@ -82,9 +87,9 @@ const detailStyle = css`
     }
 `
 
-function Detail({ project }){
+function Detail({ project, isSectionVisited }){
     return (
-        <div css={detailStyle} className="mid-detail shadow hide">
+        <div css={detailStyle} className={`mid-detail shadow hide ${isSectionVisited ? "fadein-ru" : "not-visited" }` }>
             <div className="title">
                 { project.title }
             </div>
@@ -106,16 +111,11 @@ function Detail({ project }){
     )
 }
 
-const listDetailStyle = css`
-    @media (max-width: 1099px){
-        ::after, ::before{
-            border: 0;
-        }
-    }
-`
-
 function Projects({ projects }){
     const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+    const screenWidth = useScreenSize()
+    const [isSectionVisited, setIsSectionVisited] = useState(false)
+    const listDetail = useRef(null)
     function handleProjectClick(index){
         if (activeProjectIndex === index){
             return
@@ -129,18 +129,30 @@ function Projects({ projects }){
             detail.classList.add('shadow')
         }, 300)
     }
+
+    const observer = new IntersectionObserver(([entry], observer)=>{
+        if (entry.isIntersecting){
+            setIsSectionVisited(true)
+            observer.disconnect()
+        }
+    }, { threshold: 0.5 })
+
+    useEffect(()=>{
+        observer.observe(listDetail.current)
+    }, [])
+
     return (
         <div className="projects ss-section">
             <div className="header">
                 Projects
             </div>
-            <div css={listDetailStyle} className="list-detail border-corner">
-                <div className="list">
+            <div ref={listDetail} className={`list-detail ${screenWidth >= 1100 ? "border-corner": ""}  ${isSectionVisited ? "movable" : ""}`}>
+                <div className={`list ${isSectionVisited ? "lc-fadein-up" : ""}`}>
                     {
                         projects.map((project, indx)=> <Project activeProject={activeProjectIndex} setActiveProject={handleProjectClick} index={indx} key={indx} project={project} />)
                     }
                 </div>
-                <Detail project={projects[activeProjectIndex]} />
+                <Detail project={projects[activeProjectIndex]} isSectionVisited={isSectionVisited} />
             </div>
         </div>
     )

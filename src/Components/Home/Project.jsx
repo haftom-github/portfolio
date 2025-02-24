@@ -1,5 +1,6 @@
 import Tag from "./Tag";
 import useScreenSize from "../../Hooks/useScreenSize";
+import { useEffect, useRef } from "react";
 
 function Main({ project }){
     const screenWidth = useScreenSize();
@@ -32,8 +33,10 @@ function Main({ project }){
 
 function Project({ activeProject, setActiveProject, index, project }){
     const screenWidth = useScreenSize()
+    const projectRef = useRef(null)
+    useEffect(()=>projectRef.current.style.setProperty('--li-fade-index', index))
     return (
-        <div className={screenWidth >= 1100 && activeProject === index ? "project active": "project"} onClick={()=>setActiveProject(index)}>
+        <div ref={projectRef} className={screenWidth >= 1100 && activeProject === index ? "project li-fadein-up active": "project li-fadein-up"} onClick={()=>setActiveProject(index)}>
             <Main project={project} />
         </div>
     )
