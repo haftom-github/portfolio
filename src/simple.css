@@ -81,18 +81,26 @@
 }
 
 .ss-container {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
-    height: 100vh;
 }
 
 .ss-container .ss-section {
-    height: 100vh;
+    height: 100%;
     scroll-snap-align: center;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ss-section > div {
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .li-fadein-up {

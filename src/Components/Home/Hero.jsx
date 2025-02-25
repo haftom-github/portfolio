@@ -16,9 +16,6 @@ function Contacts (){
         let address = contacts[activeContact].value
         navigator.clipboard.writeText(address)
         setCopyHit(true)
-        // setTimeout(() => {
-        //     setCopyHit(false)
-        // }, 1000);
     }
 
     function resetActiveContact(){
@@ -27,7 +24,7 @@ function Contacts (){
     }
 
     return (
-        <div className="hero-contacts" onMouseLeave={resetActiveContact} >
+        <section className="hero-contacts" onMouseLeave={resetActiveContact} >
             <div className="icons">
             {
                 contacts.map((contact, indx)=> 
@@ -53,25 +50,26 @@ function Contacts (){
                 }
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
 function Hero(){
     return (
-        <div className="hero-section ss-section">
-            {/* <div className="hero-entry">welcome, welcome!!!</div> */}
-            <div className="hero-text">
-                <div className="hero-text-primary">Full-stack <span className="hero-centroid">Web</span> </div>
-                <div className="hero-text-secondary">& <span className="hero-centroid">Android</span> developer.</div>
+        <section className="ss-section">
+            <div className="hero-section">
+                <div className="hero-text">
+                    <div className="hero-text-primary">Full-stack <span className="hero-centroid">Web</span> </div>
+                    <div className="hero-text-secondary">& <span className="hero-centroid">Android</span> developer.</div>
+                </div>
+                <div className="hero-body">I work as a backend, frontend, or full-stack developer, designing systems with scalability and security built from ground up. with experience accross every stage of the software development lifecycle.</div>
+                <Contacts />
+                <div className="hero-action">
+                    <button className="hero-action-primary">action-1</button>
+                    <button className="hero-action-secondary">action-2</button>
+                </div>
             </div>
-            <div className="hero-body">I work as a backend, frontend, or full-stack developer, designing systems with scalability and security built from ground up. with experience accross every stage of the software development lifecycle.</div>
-            <Contacts />
-            <div className="hero-action">
-                <button className="hero-action-primary">action-1</button>
-                <button className="hero-action-secondary">action-2</button>
-            </div>
-        </div>
+        </section>
     )
 }
 

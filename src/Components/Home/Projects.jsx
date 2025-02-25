@@ -142,19 +142,21 @@ function Projects({ projects }){
     }, [])
 
     return (
-        <div className="projects ss-section">
-            <div className="header">
-                Projects
-            </div>
-            <div ref={listDetail} className={`list-detail ${screenWidth >= 1100 ? "border-corner": ""}  ${isSectionVisited ? "movable" : ""}`}>
-                <div className={`list ${isSectionVisited ? "lc-fadein-up" : ""}`}>
-                    {
-                        projects.map((project, indx)=> <Project activeProject={activeProjectIndex} setActiveProject={handleProjectClick} index={indx} key={indx} project={project} />)
-                    }
+        <section className="ss-section">
+            <div className="projects">
+                <div className="header">
+                    Projects
                 </div>
-                <Detail project={projects[activeProjectIndex]} isSectionVisited={isSectionVisited} />
+                <div ref={listDetail} className={`list-detail ${screenWidth >= 1100 ? "border-corner": ""}  ${isSectionVisited ? "movable" : ""}`}>
+                    <div className={`list ${isSectionVisited ? "lc-fadein-up" : ""}`}>
+                        {
+                            projects.map((project, indx)=> <Project activeProject={activeProjectIndex} setActiveProject={handleProjectClick} index={indx} key={indx} project={project} />)
+                        }
+                    </div>
+                    <Detail project={projects[activeProjectIndex]} isSectionVisited={isSectionVisited} />
+                </div>
             </div>
-        </div>
+        </section>
     )
 }
 

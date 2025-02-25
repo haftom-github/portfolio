@@ -1,12 +1,7 @@
 #root {
-  width: 100vw;
-  padding: 2rem;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
+  height: 100vh;
+  width: 100%;
 }
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -22,9 +17,7 @@ button:focus-visible {
 }
 
 .hero-section {
-  max-width: 900px;
-  padding: 2rem;
-  margin-top: 2rem;
+  padding: 8rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -141,8 +134,8 @@ button:focus-visible {
 }
 
 .projects {
+  box-sizing: border-box;
   padding: 3rem 1rem;
-  margin-top: 3rem;
 }
 
 .projects .header{
@@ -246,6 +239,8 @@ button:focus-visible {
   padding: 0.5rem 0.7rem;
   margin: 0.2rem;
   color: var(--color-tint-plus-secondary);
+  font-size: small;
+  font-weight: bold;
 }
 
 @media (max-width: 800px) {
