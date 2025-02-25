@@ -90,9 +90,9 @@
 }
 
 .ss-container .ss-section {
+    box-sizing: border-box;
     height: 100%;
     scroll-snap-align: center;
-    padding: 0 !important;
     margin: 0 !important;
     display: flex;
     align-items: center;

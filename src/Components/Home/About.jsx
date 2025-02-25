@@ -4,18 +4,10 @@ import useScreenSize from "../../Hooks/useScreenSize"
 import useVisitObserver from "../../Hooks/useVisitObserver"
 
 const style = css`
-    &.large {
-        padding: 8rem;
-    }
-    .header {
-        font-weight: bold;
-        padding: 1rem;
-    }
     .photo-about {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 2rem;
     }
     .photo {
         display: flex;
@@ -57,8 +49,8 @@ const About = () => {
     const [sectionRef, isSectionVisited] = useVisitObserver({ threshold: 0.2 })
     return (
         <section ref={sectionRef} className={`ss-section translate-down ${isSectionVisited? "fadein-up": ""}`}>
-            <div css={style} className={`${screenWidth >= 800 ? "large" : ""}`}>
-                <div className='header'>
+            <div css={style}>
+                <div className='section-header'>
                     About Me
                 </div>
                 <div className={`photo-about ${screenWidth >= 1100 ? "border-corner": "wrap"} ${isSectionVisited ? "movable" : "" }`}>

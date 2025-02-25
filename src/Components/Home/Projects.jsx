@@ -131,9 +131,9 @@ function Projects({ projects }){
     }
 
     return (
-        <section ref={sectionRef} className={`ss-section translate-down ${isSectionVisited ? "fadein-up" : ""}`}>
+        <section ref={sectionRef} className={`ss-section projects-section translate-down ${isSectionVisited ? "fadein-up" : ""}`}>
             <div className="projects">
-                <div className="header">
+                <div className="section-header">
                     Projects
                 </div>
                 <div className={`list-detail ${screenWidth >= 1100 ? "border-corner": ""}  ${isSectionVisited ? "movable" : ""}`}>
