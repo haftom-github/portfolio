@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { useEffect, useState, useRef } from "react"
+import { useState } from "react"
 import Project from "./Project"
 import { css } from "@emotion/react"
 import Github from "../../assets/github.svg?react"
@@ -115,7 +115,7 @@ function Detail({ project, isSectionVisited }){
 function Projects({ projects }){
     const [activeProjectIndex, setActiveProjectIndex] = useState(0);
     const screenWidth = useScreenSize()
-    const [listDetail, isSectionVisited] = useVisitObserver({ threshold: 0.5 })
+    const [sectionRef, isSectionVisited] = useVisitObserver({ threshold: 0.2 })
     function handleProjectClick(index){
         if (activeProjectIndex === index){
             return
@@ -131,12 +131,12 @@ function Projects({ projects }){
     }
 
     return (
-        <section className="ss-section">
+        <section ref={sectionRef} className={`ss-section translate-down ${isSectionVisited ? "fadein-up" : ""}`}>
             <div className="projects">
                 <div className="header">
                     Projects
                 </div>
-                <div ref={listDetail} className={`list-detail ${screenWidth >= 1100 ? "border-corner": ""}  ${isSectionVisited ? "movable" : ""}`}>
+                <div className={`list-detail ${screenWidth >= 1100 ? "border-corner": ""}  ${isSectionVisited ? "movable" : ""}`}>
                     <div className={`list ${isSectionVisited ? "lc-fadein-up" : ""}`}>
                         {
                             projects.map((project, indx)=> <Project activeProject={activeProjectIndex} setActiveProject={handleProjectClick} index={indx} key={indx} project={project} />)

@@ -4,7 +4,9 @@ import useScreenSize from "../../Hooks/useScreenSize"
 import useVisitObserver from "../../Hooks/useVisitObserver"
 
 const style = css`
-    padding: 2rem;
+    &.large {
+        padding: 8rem;
+    }
     .header {
         font-weight: bold;
         padding: 1rem;
@@ -24,6 +26,8 @@ const style = css`
         padding: 2rem;
         flex-shrink: 0;
         img {
+            transform: translateY(20px);
+            opacity: 0;
             width: 200px;
             height: 200px;
             border-radius: 50%;
@@ -37,32 +41,38 @@ const style = css`
         justify-content: center;
         text-align: justify;
         text-indent: 50px;
-        padding: 2rem;
+        padding: 0;
         opacity: .7;
+    }
+    .photo-about.wrap {
+        flex-wrap: wrap;
+        .photo {
+            width: 100%;
+        }
     }
 `
 
 const About = () => {
     const screenWidth = useScreenSize()
-    const [observeRef, isSectionVisited] = useVisitObserver({ threshold: 0.5 })
+    const [sectionRef, isSectionVisited] = useVisitObserver({ threshold: 0.2 })
     return (
-        <section ref={observeRef} className="about-section ss-section">
-            <div css={style} className="container">
+        <section ref={sectionRef} className={`ss-section translate-down ${isSectionVisited? "fadein-up": ""}`}>
+            <div css={style} className={`${screenWidth >= 800 ? "large" : ""}`}>
                 <div className='header'>
                     About Me
                 </div>
-                <div className={`photo-about ${screenWidth >= 1100 ? "border-corner": ""} ${isSectionVisited ? "movable" : "" }`}>
+                <div className={`photo-about ${screenWidth >= 1100 ? "border-corner": "wrap"} ${isSectionVisited ? "movable" : "" }`}>
                     <div className='photo'>
-                        <img src="/src/assets/project1-2.png" alt="haftom-tsegay" />
+                        <img className={`${isSectionVisited? "fadein-up": ""}`} src="/src/assets/project1-2.png" alt="haftom-tsegay" />
                     </div>
-                    <div className='about'>
-                        <div>
+                    <div className={`about ${isSectionVisited ? "lc-fadein-up" : "" }`}>
+                        <div className="li-fadein-up">
                             Hello! I'm Haftom, a passionate software developer with experience in building web applications using modern technologies. I love creating user-friendly and efficient applications that solve real-world problems.
                             I have a strong background in JavaScript, React, and other web development technologies. I'm always eager to learn new things and take on new challenges.
                             I have a strong background in JavaScript, React, and other web development technologies. I'm always eager to learn new things and take on new challenges.
                             I have a strong background in JavaScript, React, and other web development technologies. I'm always eager to learn new things and take on new challenges.
                         </div>
-                        <div>
+                        <div className="li-fadein-up">
                             I have a strong background in JavaScript, React, and other web development technologies. I'm always eager to learn new things and take on new challenges.
                         </div>
                     </div>

@@ -244,8 +244,9 @@ button:focus-visible {
 }
 
 @media (max-width: 800px) {
-  #root, .projects, .hero-section {
-    padding: 1rem;
+  .ss-section > div {
+    padding: 0 2rem;
+    margin-top: 4rem;
   }
 
   .project .pic {
@@ -262,9 +263,11 @@ button:focus-visible {
   .hero-text {
     font-size: 60px;
   }
-  .projects, .hero-section {
-    padding: 0;
+
+  .photo-about {
+    padding: 0 !important;
   }
+  
   .project {
     padding-left: 0rem;
   }
