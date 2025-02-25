@@ -7,6 +7,7 @@ import Web from "../../assets/web.svg?react"
 import Tag from "./Tag"
 import Carousel from "../Carousel"
 import useScreenSize from "../../Hooks/useScreenSize"
+import useVisitObserver from "../../Hooks/useVisitObserver"
 
 function Icon({ name }){
     switch(name){
@@ -114,8 +115,7 @@ function Detail({ project, isSectionVisited }){
 function Projects({ projects }){
     const [activeProjectIndex, setActiveProjectIndex] = useState(0);
     const screenWidth = useScreenSize()
-    const [isSectionVisited, setIsSectionVisited] = useState(false)
-    const listDetail = useRef(null)
+    const [listDetail, isSectionVisited] = useVisitObserver({ threshold: 0.5 })
     function handleProjectClick(index){
         if (activeProjectIndex === index){
             return
@@ -129,17 +129,6 @@ function Projects({ projects }){
             detail.classList.add('shadow')
         }, 300)
     }
-
-    const observer = new IntersectionObserver(([entry], observer)=>{
-        if (entry.isIntersecting){
-            setIsSectionVisited(true)
-            observer.disconnect()
-        }
-    }, { threshold: 0.5 })
-
-    useEffect(()=>{
-        observer.observe(listDetail.current)
-    }, [])
 
     return (
         <section className="ss-section">

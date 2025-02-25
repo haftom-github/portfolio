@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
 import useScreenSize from "../../Hooks/useScreenSize"
+import useVisitObserver from "../../Hooks/useVisitObserver"
 
 const style = css`
     padding: 2rem;
@@ -43,13 +44,14 @@ const style = css`
 
 const About = () => {
     const screenWidth = useScreenSize()
+    const [observeRef, isSectionVisited] = useVisitObserver({ threshold: 0.5 })
     return (
-        <section className="about-section ss-section">
+        <section ref={observeRef} className="about-section ss-section">
             <div css={style} className="container">
                 <div className='header'>
                     About Me
                 </div>
-                <div className={`photo-about ${screenWidth >= 1100 ? "border-corner": ""}`}>
+                <div className={`photo-about ${screenWidth >= 1100 ? "border-corner": ""} ${isSectionVisited ? "movable" : "" }`}>
                     <div className='photo'>
                         <img src="/src/assets/project1-2.png" alt="haftom-tsegay" />
                     </div>
