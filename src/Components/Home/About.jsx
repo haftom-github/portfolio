@@ -31,8 +31,7 @@ const style = css`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        text-align: justify;
-        text-indent: 50px;
+        text-align: start;
         padding: 0;
         opacity: .7;
     }
